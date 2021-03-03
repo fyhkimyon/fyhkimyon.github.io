@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>2014-2015 ACM-ICPC, Asia Tokyo Regional Contest | kimyon&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Sloved A B C D E F G H I J K     6&#x2F;11 O O O O - O Ø - - - -">
+  <meta name="description" content="Sloved A B C D E F G H I J K    6&#x2F;11 O O O O - O Ø - - - -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2014-2015 ACM-ICPC, Asia Tokyo Regional Contest">
 <meta property="og:url" content="http://example.com/2021/03/02/2014-2015%20ACM-ICPC,%20Asia%20Tokyo%20Regional%20Contest/index.html">
 <meta property="og:site_name" content="kimyon&#39;s blog">
-<meta property="og:description" content="Sloved A B C D E F G H I J K     6&#x2F;11 O O O O - O Ø - - - -">
+<meta property="og:description" content="Sloved A B C D E F G H I J K    6&#x2F;11 O O O O - O Ø - - - -">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-02T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-03T01:32:14.135Z">
+<meta property="article:modified_time" content="2021-03-03T01:34:01.318Z">
 <meta property="article:author" content="kimyon">
 <meta property="article:tag" content="训练实录">
 <meta property="article:tag" content="枚举">
@@ -188,43 +188,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div class="table-container">
-<table>
+        <table>
 <thead>
 <tr>
-<th style="text-align:center">Sloved</th>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">D</th>
-<th style="text-align:center">E</th>
-<th style="text-align:center">F</th>
-<th style="text-align:center">G</th>
-<th style="text-align:center">H</th>
-<th style="text-align:center">I</th>
-<th style="text-align:center">J</th>
-<th style="text-align:center">K</th>
+<th align="center">Sloved</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">E</th>
+<th align="center">F</th>
+<th align="center">G</th>
+<th align="center">H</th>
+<th align="center">I</th>
+<th align="center">J</th>
+<th align="center">K</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">6/11</td>
-<td style="text-align:center">O</td>
-<td style="text-align:center">O</td>
-<td style="text-align:center">O</td>
-<td style="text-align:center">O</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">O</td>
-<td style="text-align:center">Ø</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
+<tbody><tr>
+<td align="center">6/11</td>
+<td align="center">O</td>
+<td align="center">O</td>
+<td align="center">O</td>
+<td align="center">O</td>
+<td align="center">-</td>
+<td align="center">O</td>
+<td align="center">Ø</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <span id="more"></span>
+
 <h5 id="A-Bit-String-Reordering"><a href="#A-Bit-String-Reordering" class="headerlink" title="A-Bit String Reordering"></a><a target="_blank" rel="noopener" href="https://codeforces.com/gym/100803/attachments">A-Bit String Reordering</a></h5><p><strong>题意：</strong>给一长度为$N$的$01$串，每次操作能让两个相邻的位置互换，给定一长度为$M$的序列$p$，问将该$01$串换成$0$和$1$相互交替且个数符合每个$p_i$的最少交换次数，保证有解。<br><strong>思路：</strong>考虑到$N$非常小，而且只有开头是$0$或者开头是$1$两种情况，只需对两种情况贪心模拟取个最小值即可。</p>
 <details>
     <summary>code</summary>
@@ -239,7 +236,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">rd</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> ch = getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ch == <span class="string">&#x27;-&#x27;</span>)  f = <span class="number">-1</span>;</span><br><span class="line">		ch = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">		x =x * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		ch = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x * f;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">	<span class="keyword">int</span> ans1 = <span class="number">0</span>, ans2 = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> x = s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">			<span class="keyword">if</span> (i == <span class="number">1</span>) ans1 = x;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (s[i<span class="number">-1</span>] == <span class="string">&#x27;*&#x27;</span>) ans1 *= x;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (s[i<span class="number">-1</span>] == <span class="string">&#x27;+&#x27;</span>) ans1 += x;</span><br><span class="line">			<span class="keyword">if</span> (s[i<span class="number">-1</span>] == <span class="string">&#x27;+&#x27;</span> || i == <span class="number">1</span>) st.push(x);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (s[i] == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span> y = st.top();</span><br><span class="line">				st.pop();</span><br><span class="line">				<span class="keyword">int</span> x = s[i+<span class="number">1</span>] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				st.push(y * x);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (!st.empty()) &#123;</span><br><span class="line">		ans2 += st.top();</span><br><span class="line">		st.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> v;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;v);</span><br><span class="line">	<span class="keyword">if</span> (v == ans1 &amp;&amp; v != ans2) <span class="built_in">puts</span>(<span class="string">&quot;L&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (v == ans2 &amp;&amp; v != ans1) <span class="built_in">puts</span>(<span class="string">&quot;M&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (v == ans1 &amp;&amp; v == ans2) <span class="built_in">puts</span>(<span class="string">&quot;U&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">&quot;I&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </details>
 
-<h5 id="C-Shopping"><a href="#C-Shopping" class="headerlink" title="C-Shopping"></a><a target="_blank" rel="noopener" href="https://codeforces.com/gym/100803/attachments">C-Shopping</a></h5><p><strong>题意：</strong>一个一维商场有$1$~$N$个商店，且有入口$0$和出口$N+1$，编号相差$1$的位置需要消耗$1$的时间经过。现需要从入口进入，在每个商店购买物品后从出口出去，给定若干关系$c$和$d$表示在$c$商店买东西必须先经过$d$商店，问买完所有东西并到达出口最少花费多少时间。<br><strong>思路：</strong>对有交集的区间进行合并，然后合并后的每个区间贪心先到$r$再到$l$再回到$r$，写，wa9，但该策略确实是正确的，应该是实现问题，没改，改$dp$，A。对所有限制按$d$升序排序后$f[i]$表示买完第$i$个限制前的所有商品需要的最少时间，转移：$f[i] = \sum{}<em>{j=1}^{i-1}(f[j] + (d_i-d_j)+(d_i-min{}</em>{k=j+1}^{i}c_k) * 2)$ 。只需维护区间$c_i$的最小值。</p>
+<h5 id="C-Shopping"><a href="#C-Shopping" class="headerlink" title="C-Shopping"></a><a target="_blank" rel="noopener" href="https://codeforces.com/gym/100803/attachments">C-Shopping</a></h5><p><strong>题意：</strong>一个一维商场有$1$~$N$个商店，且有入口$0$和出口$N+1$，编号相差$1$的位置需要消耗$1$的时间经过。现需要从入口进入，在每个商店购买物品后从出口出去，给定若干关系$c$和$d$表示在$c$商店买东西必须先经过$d$商店，问买完所有东西并到达出口最少花费多少时间。<br><strong>思路：</strong>对有交集的区间进行合并，然后合并后的每个区间贪心先到$r$再到$l$再回到$r$，写，wa9，但该策略确实是正确的，应该是实现问题，没改，改$dp$，A。对所有限制按$d$升序排序后$f[i]$表示买完第$i$个限制前的所有商品需要的最少时间，转移：$f[i] = \sum{}_{j=1}^{i-1}(f[j] + (d_i-d_j)+(d_i-min{}_{k=j+1}^{i}c_k) * 2)$。</p>
 <details>
     <summary>code</summary>
 
@@ -540,10 +537,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">训练实录</a>
               </li>
              
@@ -573,6 +566,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
