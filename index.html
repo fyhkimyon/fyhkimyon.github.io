@@ -62,7 +62,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 7
+			总文章数 8
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -211,6 +211,88 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/02/27/practice/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-AGC052-B-Tree Edges XOR" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/08/AGC052-B-Tree%20Edges%20XOR/">AGC052-B-Tree Edges XOR</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/08/AGC052-B-Tree%20Edges%20XOR/" class="archive-article-date">
+  	<time datetime="2021-03-08T07:15:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>题意：</strong>给一棵含奇数个顶点的树，每条边有一个初值$w^1$，一个最终需要变成的值$w^2$。每次操作可以选一条边，对于这条边关联的两个顶点的出边都异或上所选边的值。问经过若干次操作后所有边是否能够同时变成最终需要变成的值。<br><strong>思路：</strong>对于每个点赋予一个点权，使得每条边的边权等于该边关联的两个顶点的点权相异或。可以发现，只要给某一个顶点赋予一个初始的点权（可以是任意值），那么所有点的点权就已经确定了，因此虽然点权有无限种构造的可能，但实际上两种构造方案相互转换只是所有点权同时再异或一个值。<br>需要考虑以下两个性质（易证，在此不做证明）：<br>1.对于每一个操作选择的$e(u,v)$，考虑其对点权的影响，只需将$u$和$v$的点权互换即可。<br>2.对于点权的任意一个排列，都可以通过性质1的点权互换得到。<br><strong>做法：</strong>先任意确定一个点权的构造方案，不妨将1号点的权值设为0，然后从1号点dfs一遍即可计算出每个点的权值。对于$w^1$，可以得到一个点权排列$(a_1,a_2,…,a_n)$，同理对$w^2$也可以得到一个排列$(b_1,b_2,…,b_n)$。由于有性质2的存在，我们可以对$a$进行重排；由于构造方法有无数种，我们考虑调整$a$，现在的问题是能否让所有$a_i$异或上一个$W$，使得$a$在重排后能够变成$b$。我们可以构造这个$W$，构造方法如下：<br>        $a_1$ ^ $W$ = $b_1$，$a_2$ ^ $W$ = $b_2$，…，$a_n$ ^ $W$ = $b_n$</p>
+<p>=&gt;   $W$ = $a_1$ ^ $b_1$， $W$ = $a_2$ ^ $b_2$，…，$W$ = $a_n$ ^ $b_n$</p>
+<p>由于总共有奇数个顶点，因此有奇数个式子，把所有式子左边相异或，右边相异或，得到：</p>
+<p>$W$ = $a_1$ ^ $a_2$ ^ … ^ $a_n$ ^ $b_1$ ^ $b_2$ ^ … ^ $b_n$</p>
+<p>因此可以对所有$a_i$都异或一个$W$，然后对$a$和$b$排序，判断每个位置的$a_i$和$b_i$是否都相同即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; e[<span class="number">2</span>][N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;e[k][u].pb(&#123;v, w&#125;),e[k][v].pb(&#123;u, w&#125;);&#125;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">2</span>][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span> to: e[k][u]) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = to.fi, w = to.se;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    a[k][v] = a[k][u] ^ w;</span><br><span class="line">    dfs(v, u, k);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">  <span class="keyword">int</span> n;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> u, v, _w[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; _w[<span class="number">0</span>] &gt;&gt; _w[<span class="number">1</span>];</span><br><span class="line">    add(u, v, _w[<span class="number">0</span>], <span class="number">0</span>);</span><br><span class="line">    add(u, v, _w[<span class="number">1</span>], <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  dfs(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>), dfs(<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">int</span> val = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) val ^= a[<span class="number">0</span>][i] ^ a[<span class="number">1</span>][i];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[<span class="number">0</span>][i] ^= val;</span><br><span class="line">  sort(a[<span class="number">0</span>]+<span class="number">1</span>,a[<span class="number">0</span>]+n+<span class="number">1</span>), sort(a[<span class="number">1</span>]+<span class="number">1</span>,a[<span class="number">1</span>]+n+<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>][i] ^ a[<span class="number">1</span>][i])</span><br><span class="line">    &#123;<span class="built_in">puts</span>(<span class="string">&quot;NO&quot;</span>);<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Atcoder</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/08/AGC052-B-Tree%20Edges%20XOR/">展开全文 >></a>
         </p>
       
 
@@ -1113,6 +1195,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Atcoder</a>
               </li>
              
               <li class="article-tag-list-item">
