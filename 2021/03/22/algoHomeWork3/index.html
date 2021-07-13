@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 27
+			总文章数 28
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -183,7 +183,7 @@
       
         <p><strong>实验报告</strong></p>
  <span id="more"></span>
-<div class="table-container">
+
 <table>
 <thead>
 <tr>
@@ -197,8 +197,7 @@
 <th></th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><strong>学生姓名</strong></td>
 <td>方一昊</td>
 <td><strong>所在班级</strong></td>
@@ -236,10 +235,9 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1.   问题"></a>1.   问题</h1><p>用两种方式，给定排好序的数组T[1…n]和一个数x，如果∃ v(v∈T)，输出v的下标，否则输出0</p>
 <h1 id="2-解析"><a href="#2-解析" class="headerlink" title="2.   解析"></a>2.   解析</h1><p>第一种方式：迭代。从前向后判断每个T中的元素，如果找到一个元素为x的值，输出该下标，如果找不到输出0.</p>
 <p>第二种方式：二分查找。每次查询当前范围内中间的元素，如果当前元素为x，输出该下标，如果当前元素大于x，由于T已经排好序，因此T右边的元素都大于x，可以在左边范围内继续查找，当前元素小于x的情况反之。如果当范围缩小为1个元素的时候仍未找到等于x的元素，输出0。</p>
@@ -599,6 +597,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">字符串哈希</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单调栈</a>
               </li>
              
@@ -667,15 +677,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串哈希</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分治</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
               </li>
              
               <li class="article-tag-list-item">

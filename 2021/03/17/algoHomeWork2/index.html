@@ -70,7 +70,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 27
+			总文章数 28
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -186,7 +186,7 @@
       
         <p><strong>实验报告</strong></p>
  <span id="more"></span>
-<div class="table-container">
+
 <table>
 <thead>
 <tr>
@@ -200,8 +200,7 @@
 <th></th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><strong>学生姓名</strong></td>
 <td>方一昊</td>
 <td><strong>所在班级</strong></td>
@@ -239,17 +238,16 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1.   问题"></a>1.   问题</h1><p>定义dist(u,v)为顶点u和v之间的最短距离,V为所有顶点的集合。</p>
 <p>\1.   使用Floyd算法对∀(u,v)∈V,求dist(u,v)。</p>
 <p><img src="1.png" alt="img"></p>
 <p>2.使用dijkstra算法求点dist(a,h)。</p>
 <p><img src="2.png" alt="img"></p>
-<h1 id="2-解析"><a href="#2-解析" class="headerlink" title="2.   解析"></a>2.   解析</h1><p>Floyd算法使用动态规划思想。设dis[k][i][j]表示经过若干个编号不超过k的节点的，从节点i到节点j的最短路的长度，因此若想得到dis[k][i][j]可以按顺序枚举k，那么计算dis[k][i][j]的时候便可以使用dis[k-1][x]<a href="x,y∈V">y</a>进行转移，因为dis[k-1][x][y]已经在上一轮被计算出。初始时刻可以认为dis[0][i][j]为初始时刻原图上相邻两点的距离，即使原图的距离矩阵。由于阶段k总是由k-1转移而来，dis的第一维可以省去。</p>
-<p>Dijkstra算法使用贪心思想。该算法用于计算单源最短路，设a为源点，dis<a href="x∈V">x</a>表示节点a到节点x的最短距离，初始化dis[a] = 0，其他的dis[x] = 正无穷。每次从未访问过的点中选择一个dis[u]最小的u，并枚举其的出点v，如果dis[u] + w(u, v) &lt; dis[v]就用其更新dis[v]，由于每次选择的dis[u]是之前更新过的最小值，那么此时dis[v]就已经是最优解，在后续过程中不会再被更新。对选择边权最小的dis[u]可以对所有已经被更新的点进行枚举或者使用小根堆进行维护。</p>
+<h1 id="2-解析"><a href="#2-解析" class="headerlink" title="2.   解析"></a>2.   解析</h1><p>Floyd算法使用动态规划思想。设dis[k][i][j]表示经过若干个编号不超过k的节点的，从节点i到节点j的最短路的长度，因此若想得到dis[k][i][j]可以按顺序枚举k，那么计算dis[k][i][j]的时候便可以使用dis[k-1][x]<a href="x,y%E2%88%88V">y</a>进行转移，因为dis[k-1][x][y]已经在上一轮被计算出。初始时刻可以认为dis[0][i][j]为初始时刻原图上相邻两点的距离，即使原图的距离矩阵。由于阶段k总是由k-1转移而来，dis的第一维可以省去。</p>
+<p>Dijkstra算法使用贪心思想。该算法用于计算单源最短路，设a为源点，dis<a href="x%E2%88%88V">x</a>表示节点a到节点x的最短距离，初始化dis[a] = 0，其他的dis[x] = 正无穷。每次从未访问过的点中选择一个dis[u]最小的u，并枚举其的出点v，如果dis[u] + w(u, v) &lt; dis[v]就用其更新dis[v]，由于每次选择的dis[u]是之前更新过的最小值，那么此时dis[v]就已经是最优解，在后续过程中不会再被更新。对选择边权最小的dis[u]可以对所有已经被更新的点进行枚举或者使用小根堆进行维护。</p>
 <h1 id="3-设计"><a href="#3-设计" class="headerlink" title="3.   设计"></a>3.   设计</h1><p>Floyd：</p>
 <p>初始化dis数组</p>
 <p>枚举阶段(编号不超过k的节点)k：</p>
@@ -607,6 +605,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">字符串哈希</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单调栈</a>
               </li>
              
@@ -675,15 +685,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串哈希</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分治</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
               </li>
              
               <li class="article-tag-list-item">
